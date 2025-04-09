@@ -1,0 +1,127 @@
+type: collection.insomnia.rest/5.0
+name: Laravel12-Project
+meta:
+  id: wrk_0f31aefc83c5485c8ad130cf2ab5c4d8
+  created: 1744216638903
+  modified: 1744216638903
+collection:
+  - url: http://127.0.0.1:8000/api/place/create
+    name: create place
+    meta:
+      id: req_ad95ed5539f84f5a8f801e02005375bf
+      created: 1744216655690
+      modified: 1744230044589
+      isPrivate: false
+      sortKey: -1744216705174
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "Beira Mar",
+        	"slug": "beira-mar",
+        	"city": "Fortaleza",
+        	"state": "Ceará"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.0.2
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/place/edit/3
+    name: edit place
+    meta:
+      id: req_a1e5a93d421f48e1b2c2eb83a96209d4
+      created: 1744216666646
+      modified: 1744235668624
+      isPrivate: false
+      sortKey: -1744216695672.5
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "Beira Mar 2",
+        	"slug": "beira-mar",
+        	"city": "Fortaleza",
+        	"state": "Ceará"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.0.2
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/place/delete/3
+    name: delete place
+    meta:
+      id: req_332dbe0c9c434d608857bce3c48d2671
+      created: 1744216686271
+      modified: 1744235677358
+      isPrivate: false
+      sortKey: -1744216686271
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/11.0.2
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/place/places
+    name: list places
+    meta:
+      id: req_0310d9ad925c4bcb977bd30095cc5988
+      created: 1744216705074
+      modified: 1744226960535
+      isPrivate: false
+      sortKey: -1744216705074
+    method: GET
+    parameters:
+      - id: pair_922d9368ceee461db254396cf6cc8b7f
+        name: name
+        value: Beira Mar
+        disabled: true
+    headers:
+      - name: User-Agent
+        value: insomnia/11.0.2
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_d87b8252e64327235dd89340bd8ab33ef975d740
+    created: 1744216638919
+    modified: 1744216638919
+environments:
+  name: Base Environment
+  meta:
+    id: env_d87b8252e64327235dd89340bd8ab33ef975d740
+    created: 1744216638914
+    modified: 1744216638914
+    isPrivate: false
