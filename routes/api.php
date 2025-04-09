@@ -8,7 +8,9 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::post('/create-place', [PlaceController::class, 'create']);
-Route::get('/get-places', [PlaceController::class, 'places']);
-Route::put('/edit-place', [PlaceController::class, 'edit']);
-Route::delete('/delete-place', [PlaceController::class, 'delete']);
+Route::prefix('/place')->group(function () {
+    Route::post('/create', [PlaceController::class, 'create']);
+    Route::get('/places', [PlaceController::class, 'places']);
+    Route::put('/edit/{placeID}', [PlaceController::class, 'edit']);
+    Route::delete('/delete/{placeID}', [PlaceController::class, 'delete']);
+});

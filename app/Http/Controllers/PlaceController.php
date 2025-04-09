@@ -71,9 +71,8 @@ class PlaceController extends Controller {
         }
     }
 
-    public function edit(Request $request) {
+    public function edit(Request $request, int $placeID) {
         $validator = Validator::make($request->all(), [
-            'id'    => 'required|integer',
             'name'  => 'required|string',
             'slug'  => 'nullable|string',
             'city'  => 'required|string',
@@ -89,7 +88,7 @@ class PlaceController extends Controller {
 
         try {
             
-            $place = Place::where('id', $request->id)->first();
+            $place = Place::where('id', $placeID)->first();
 
             if (!$place) {
                 return response()->json([
@@ -116,21 +115,10 @@ class PlaceController extends Controller {
         }
     }
 
-    public function delete(Request $request) {
-        $validator = Validator::make($request->all(), [
-            'id' => 'required|integer'
-        ]);
-
-        if ($validator->fails()) {
-            return response()->json([
-                'message' => 'error in deleting place',
-                'errors' => $validator->errors()
-            ]);
-        }
-
+    public function delete(Request $request, int $placeID) {
         try {
 
-            $place = Place::where('id', $request->id)->first();
+            $place = Place::where('id', $placeID)->first();
 
             if (!$place) {
                 return response()->json([
