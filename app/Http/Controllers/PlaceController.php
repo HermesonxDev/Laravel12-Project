@@ -50,15 +50,15 @@ class PlaceController extends Controller {
             $query = Place::query();
 
             if ($name) {
-                try {
-                    $query->where('name', $name);
-                } catch (\Exception $e) {
+                $query->where('name', $name);
+            
+                if (!$query->exists()) {
                     return response()->json([
                         'message' => 'error listing places',
-                        'error' => $e->getMessage()
-                    ], 400);
+                        'error' => 'place not found'
+                    ], 404);
                 }
-            }
+            }            
 
             $places = $query->get();
             
@@ -83,7 +83,7 @@ class PlaceController extends Controller {
             return response()->json([
                 'message' => 'error while editing place',
                 'errors' => $validator->errors()
-            ]);
+            ], 422);
         }
 
         try {
