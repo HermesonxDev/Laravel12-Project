@@ -41,28 +41,28 @@ Este projeto Laravel vem com uma estrutura completa, banco de dados Dockerizado 
 
 ---
 
-## ⚙️ Configurações Iniciais
-
-**4.** Gere a chave da aplicação:
-
-> php artisan key:generate
-
-**5.** Rode as migrations:
-
-> php artisan migrate  
-> php artisan migrate --env=testing
-
----
-
 ## 🚣 Docker
 
-**6.** Suba os containers:
+**4.** Suba os containers:
 
 > docker-compose up -d --build
 
 Você terá:
 - Um container do **PostgreSQL**
 - Um painel **PgAdmin4** para administrar o banco
+
+---
+
+## ⚙️ Configurações Iniciais
+
+**5.** Gere a chave da aplicação:
+
+> php artisan key:generate
+
+**6.** Rode as migrations:
+
+> php artisan migrate  
+> php artisan migrate --env=testing
 
 ---
 
