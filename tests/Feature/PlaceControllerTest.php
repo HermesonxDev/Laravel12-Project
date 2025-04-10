@@ -44,7 +44,7 @@ describe('successful tests', function () {
 
 
     it('should return 200 when get place by name', function () {
-        $place = Place::inRandomOrder()->first();
+        $place = Place::factory()->create();
 
         $response = getJson("/api/place/places?name={$place->name}");
 
@@ -64,7 +64,7 @@ describe('successful tests', function () {
 
 
     it('should return 200 when edit place', function () {
-        $place = Place::inRandomOrder()->first();
+        $place = Place::factory()->create();
 
         $updatedPlace = Place::factory()->make()->toArray();
 
@@ -86,7 +86,7 @@ describe('successful tests', function () {
 
 
     it('should return 200 when delete place', function () {
-        $place = Place::inRandomOrder()->first();
+        $place = Place::factory()->create();
 
         $response = deleteJson("/api/place/delete/{$place->id}");
 
@@ -131,7 +131,7 @@ describe('validation tests', function () {
 
 
     it('should return 422 if required field is missing in edit', function ($field) {
-        $place = Place::inRandomOrder()->first();
+        $place = Place::factory()->create();
 
         unset($place[$field]);
 
