@@ -183,7 +183,7 @@ describe('validation tests', function () {
 
 
     it('should return 404 if trying edit a place with an invalid id', function () {
-        $invalidId = rand(1, 9999);
+        $invalidId = rand(9000, 9999);
 
         $updatedPlace = Place::factory()->make()->toArray();
 
